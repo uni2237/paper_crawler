@@ -11,3 +11,6 @@ for crwaling these 5 associations papers 20, 19, 18 years
 5. elcl
 
 datas to excel file
+
+refer to :
+https://engkimbs.tistory.com/962?category=807933
