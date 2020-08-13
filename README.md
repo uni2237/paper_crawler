@@ -1,2 +1,13 @@
 # paper_crawler
-paper crawler for PaperAssistant
+paper crawler for PaperAssistant by scrapy
+
+Used Anaconda prompt
+
+for crwaling these 5 associations papers 20, 19, 18 years
+1. acl
+2. emnlp
+3. conll
+4. naacl
+5. elcl
+
+datas to excel file
