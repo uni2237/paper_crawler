@@ -1,5 +1,4 @@
 import scrapy
-from urllib.parse import urlencode
 
 
 class TradeSpider(scrapy.spiders.XMLFeedSpider):
@@ -18,7 +17,6 @@ def start_requests(self):
         "numOfRows": "1",
     }
     for url in urls:
-        url += urlencode(params)
         yield scrapy.Request(url=url)
 
 
