@@ -1,4 +1,9 @@
 import scrapy
+from scrapy import Selector
+
+from paper_crawler.paper_crawler.items import PaperCrawlerItem
+
+import time
 
 
 class TradeSpider(scrapy.spiders.XMLFeedSpider):
@@ -17,10 +22,22 @@ def start_requests(self):
         "numOfRows": "1",
     }
     for url in urls:
-        yield scrapy.Request(url=url)
+        yield scrapy.Request(url, self.parse)
 
 
 def parse(self, response):
-    print(response.body)
+    for sel in response.xpath(''):
+        item = PaperCrawlerItem()
+
+        item['title'] = sel.xpath('//*[@id="p19-1"]/p[2]/span[2]/strong/a/text()').extract()[0]
+        item['author'] = sel.xpath('/html/body/div/section/div[2]/p[2]/span[2]/a[1]/text()').extract()[0]
+        item['abstraction'] = sel.xpath('//*[@id="abstract-P19-1001"]/div/text()').extract()[0]
+
+        print('*' * 100)
+        print(item['title'])
+
+        time.sleep(5)
+
+        yield item
 
 # 출처: https://engkimbs.tistory.com/962?category=807933 [새로비]
