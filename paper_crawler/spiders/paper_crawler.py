@@ -1,7 +1,7 @@
 import scrapy
 from scrapy import Selector
 
-from paper_crawler.paper_crawler.items import PaperCrawlerItem
+from ..items import PaperCrawlerItem
 
 import time
 
